@@ -15,4 +15,5 @@ int main(){
             la=a;
       }
       printf("%d\n",ans);
+      return 0;
 }
