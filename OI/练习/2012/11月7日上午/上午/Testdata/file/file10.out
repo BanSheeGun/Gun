@@ -1,0 +1,80 @@
+mydoc
+|----aaaa.a
+|----abcd
+|    |----abc.txt
+|    |----new
+|    |----zzz
+|    |    |----game.cpp
+|----bbbb.b
+|----cccc.c
+|----data
+|    |----libexec.a
+|----dddd.d
+|----eeee.e
+|----hx
+|    |----baidu.kill
+|    |----bashu
+|    |    |----index.cn
+|    |    |----name.id
+|    |----gfw
+|    |    |----facebook
+|    |    |    |----error.htm
+|    |    |----google
+|    |    |    |----error.htm
+|    |    |----youtube
+|    |    |    |----error.htm
+|    |----google
+|    |    |----cn
+|    |    |    |----gcd.doc
+|    |    |    |----image.jpg
+|    |    |----com.cn
+|    |----kill.gfw
+|    |----mail
+|    |    |----a.in
+|    |    |----bashu
+|    |    |    |----bsoi.cn
+|    |    |----qq.com
+|    |----one
+|    |    |----ubuntu
+|    |    |    |----org.cn
+|    |----qq
+|    |    |----com.cn
+|    |----school
+|    |    |----baidu.cn
+|    |    |----bashu
+|    |    |    |----com.cn
+|    |    |----bszx.bs
+|    |    |----cqyz.cn
+|    |----ubuntu
+|    |    |----com.cn
+|----n
+|----stdio.h
+|----test
+|    |----dd
+|    |    |----www.www
+|    |----ee
+|    |    |----a.in
+|    |    |----d.in
+|    |    |----ee
+|    |    |    |----ee
+|    |    |    |    |----fs.w
+|    |    |----r.ddd
+|    |----google
+|    |    |----com.cn
+|    |    |----p
+|    |    |    |----page.in
+|    |----qq.txt
+|    |----we
+|    |    |----are
+|    |    |    |----red.av
+|    |    |----dd.d
+|----www
+|    |----doctor.rm
+|    |----ntsd.exe
+|    |----q.in
+|    |----q.out
+|    |----q.pass
+|    |----winxp.iso
+|    |----www.www
+|    |----xinyue.h
+|    |----yellow.av

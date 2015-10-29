@@ -1,0 +1,62 @@
+var ch:char;
+begin
+ assign(input,'kot.in');reset(input);
+ assign(output,'kot.out');rewrite(output);
+ while not eof do begin
+  read(ch);
+  if ('A'<=ch)and(ch<='Z') then
+  ch:=chr(ord(ch)+ord('a')-ord('A'));
+  case ch of
+   '`':write(1);
+   '1':write(1);
+   '2':write(1);
+   '3':write(1);
+   '4':write(1);
+   '5':write(1);
+   '6':write(1);
+   '7':write(1);
+   '8':write(1);
+   '9':write(1);
+   '0':write(1);
+   '-':write(1);
+   '=':write(1);
+   'q':write(2);
+   'w':write(2);
+   'e':write(2);
+   'r':write(2);
+   't':write(2);
+   'y':write(2);
+   'u':write(2);
+   'i':write(2);
+   'o':write(2);
+   'p':write(2);
+   '[':write(2);
+   ']':write(2);
+   '\':write(2);
+   'a':write(3);
+   's':write(3);
+   'd':write(3);
+   'f':write(3);
+   'g':write(3);
+   'h':write(3);
+   'j':write(3);
+   'k':write(3);
+   'l':write(3);
+   ';':write(3);
+   '''':write(3);
+   'z':write(4);
+   'x':write(4);
+   'c':write(4);
+   'v':write(4);
+   'b':write(4);
+   'n':write(4);
+   'm':write(4);
+   ',':write(4);
+   '.':write(4);
+   '/':write(4);
+   ' ':write(5);
+  end;
+ end;
+ writeln;
+ close(input);close(output);
+end.

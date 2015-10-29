@@ -1,0 +1,35 @@
+include
+|----crt.a
+|----crt.o
+|----include
+|    |----binmode.o
+|    |----but
+|    |    |----gcrt.o
+|    |    |----libadv.a
+|    |    |----libapc.a
+|    |    |----libavi.a
+|    |    |----libbfd.la
+|    |    |----liblui.a
+|    |----crtfp.o
+|    |----crtmt.o
+|    |----crtq.o
+|    |----crtst.o
+|    |----dllcrt.o
+|----libcap.a
+|----libddim.a
+|----libddm.a
+|----libddrm.a
+|----libmgr.a
+|----libname.a
+|----library
+|    |----libctld.a
+|    |----libctlr.a
+|    |----libdll.a
+|    |----liblg.a
+|    |----libpt.a
+|----rar
+|    |----libctld.a
+|    |----libctlr.a
+|    |----libdll.a
+|    |----liblg.a
+|    |----libpt.a

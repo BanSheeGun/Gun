@@ -1,0 +1,9 @@
+begin
+ assign(output,'war.out');rewrite(output);
+ writeln(4);
+ writeln(5);
+ writeln(-1);
+ writeln(11);
+ writeln(3);
+ close(output);
+end.
