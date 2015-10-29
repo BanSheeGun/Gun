@@ -1,0 +1,30 @@
+var a:array[0..1] of longint;
+    n,k,ans,t:longint;
+procedure work(var n,t:longint);
+begin
+ if n mod k<>0 then begin
+  a[t]:=a[t]+n mod k;
+  if t=1 then ans:=ans+n mod k;
+  n:=n-n mod k;
+  t:=1-t;
+  work(n,t);
+ end
+ else begin
+  a[1-t]:=a[1-t]+n div k;
+  if 1-t=1 then ans:=ans+n div k;
+  n:=n-n div k;
+ end;
+end;
+begin
+ while not seekeof do begin
+  a[0]:=0;a[1]:=0;
+  readln(n,k);
+  ans:=0;
+  k:=k+1;
+  t:=1;
+  while n>0 do begin
+   work(n,t);
+  end;
+  writeln(ans);
+ end;
+end.
