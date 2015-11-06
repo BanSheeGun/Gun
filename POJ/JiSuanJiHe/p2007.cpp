@@ -54,7 +54,6 @@ bool p(){
 int main(){
 	n=0;
 	while (~scanf("%d%d",&a[n+1].x,&a[n+1].y)){
-		if (a[n+1].x==1111) break;
 		++n;
 	}
 	sort(a+1,a+1+n,cmp);
