@@ -5,23 +5,15 @@
 * 1
 * 2 
 
-`#include<cstdio>
-#include<cstring>
-#include<cmath>
-#include<algorithm>
-using namespace std;
+`#include<cstdio>`
+`#include<cstring>`
+`#include<cmath>`
+`#include<algorithm>`
+`using namespace std;`
 
-typedef long long ll;
+`typedef long long ll;`
 
-struct Point
-{
-	double x,y;
-};
-
-Point 
-int main(){
-	scanf("%d",&n);
-	while (n!=0){
-	}
-	return 0;
-}`
+`struct Point`
+`{`
+`	double x,y;`
+`};`
