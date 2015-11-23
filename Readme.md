@@ -27,5 +27,5 @@
 
 `struct Point`
 `{`
-`	double x,y;`
+`   double x,y;`
 `};`
