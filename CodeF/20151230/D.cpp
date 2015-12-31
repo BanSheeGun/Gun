@@ -37,13 +37,14 @@ int main()
     for (i = 1;i <= n; ++i) {
         for (j = 1;j <i;++j) 
             if (a[i-j+1] != 0) {
-                f[i][j] = s[i-j][j-1];
+                if (i-j <= j-1) f[i][j] = s[i-j][i-j];
+                    else f[i][j] = s[i-j][j-1];
                 if (pan(i-j-j+1,i-j+1,j))
                     f[i][j] += f[i-j][j];
                 f[i][j] %= m;
             }
         f[i][i] = 1;
-        for (j = 1;j <=n;++j) {
+        for (j = 1;j <=i;++j) {
             s[i][j] = (s[i][j-1] + f[i][j]) % m;
         }
     }
