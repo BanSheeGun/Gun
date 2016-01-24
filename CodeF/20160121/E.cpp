@@ -19,6 +19,7 @@ int tc;
 V a[400010];
 int head[400010];
 int e[400010];
+int z[400010];
 int next[400010];
 int fath[400010];
 int n,x,y,i,m,num,ans,j;
@@ -57,9 +58,9 @@ int confirm(int x) {
         con[top] = x;
         x = fath[x];
     }
-    downlow(1);
+    if (a[1].tag != 0) downlow(1);
     while (top>0) {
-        downlow(con[top]);
+        if (a[con[top]].tag != 0) downlow(con[top]);
         top--;
     }
     return 0;
@@ -71,7 +72,7 @@ int dfs(int x) {
         int y = e[k];
         dfs(y);
     }
-    if (head[x] == 0) update(x);
+    if (head[x] == 0) z[x] = 1;
     return 0;
 }
 
@@ -94,7 +95,10 @@ int main()
         head[x] = i;
         fath[y] = x;
     }
+    memset(z,0,sizeof(z));
     dfs(1);
+    for (i = 1;i <= n;++i)
+        if (z[i]) update(i);
 
     for (i = 1;i <= m;++i) {
         scanf("%d",&num);
