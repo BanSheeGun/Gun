@@ -66,7 +66,7 @@ int main()
             }
         printf("%I64d\n",ans[k]);
     } else {
-        printf("%I64d\n",a[k] & base);
+        printf("%I64d\n",a[k] % base);
     }
     return 0;
 }
