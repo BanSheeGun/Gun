@@ -1,12 +1,13 @@
 #include<cstdio>
 #include<cstring>
 #include<string>
+#include<cmath>
 #include<cstdlib>
 #include<algorithm>
 using namespace std;
 
 long long a[100000];
-long long ttt, tt, y, n, i, ans, t;
+long long ttt, tt, y, n, i, ans, t,nn;
 
 int main() {
     scanf("%lld", &ttt);
@@ -15,17 +16,20 @@ int main() {
         ++tt;
         scanf("%lld",&n);
         t = 0;
-        i = 1;
-        while (n != 1) {
-            ++i;
+        nn = n;
+        for (i = 2;i <= sqrt(nn);++i) {
             if (n % i == 0) {
                 ++t;
                 a[t] = 0;
                 while (n % i == 0) {
-                    n = n / i;
                     ++a[t];
+                    n /= i;
                 }
             }
+        }
+        if (n != 1) {
+            ++t;
+            a[t] = 1;
         }
         ans = 1;
         for (i = 1;i <= t; ++i) {
