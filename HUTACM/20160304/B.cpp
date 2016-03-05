@@ -6,24 +6,37 @@
 #include<algorithm>
 using namespace std;
 
+const int mn = 10000005;
+
 long long a[100000];
-long long ttt, tt, y, n, i, ans, t,nn;
+long long pn[664600];
+bool prime[mn];
+long long ttt, tt, y, n, i, ans, t, j, total;
 
 int main() {
-    scanf("%lld", &ttt);
     tt = 0;
+    memset(prime, 0, sizeof(prime));
+    total = 0;
+    for (i = 2;i < mn;++i) {
+        if (prime[i] == 0) {
+            ++total;
+            pn[total] = i;
+            for (j = 2;j * i < mn; ++j)
+                prime[j * i] = 1;
+        }
+    }
+    scanf("%lld", &ttt);
     while (ttt--) {
         ++tt;
         scanf("%lld",&n);
         t = 0;
-        nn = n;
-        for (i = 2;i <= sqrt(nn);++i) {
-            if (n % i == 0) {
+        for (i = 1;i <= total && pn[i] <= n;++i) {
+            if (n % pn[i] == 0) {
                 ++t;
                 a[t] = 0;
-                while (n % i == 0) {
+                while (n % pn[i] == 0) {
                     ++a[t];
-                    n /= i;
+                    n = n / pn[i];
                 }
             }
         }
