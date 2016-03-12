@@ -8,7 +8,7 @@ using namespace std;
 int fx[4] = {0, 1, 0,-1};
 int fy[4] = {1, 0,-1, 0};
 int a[1003][1003];
-int n,m,i,j,x1,x2,y1,y2,ans,test,kk;
+int n,m,i,j,xxx,x2,yyy,y2,ans,test,kk;
 int f, p;
 char aa[1010];
 
@@ -63,8 +63,8 @@ int main() {
                     a[i][j] = -1;
                 else
                     if (aa[j-1] == 'J') {
-                        x1 = i;
-                        y1 = j;
+                        xxx = i;
+                        yyy = j;
                     } else {
                         if (aa[j-1] == 'F') {
                             ++p;
@@ -78,11 +78,11 @@ int main() {
         }
         ans = 0;
         ++p;
-        d[p].x = x1;
-        d[p].y = y1;
+        d[p].x = xxx;
+        d[p].y = yyy;
         d[p].step = 0;
         d[p].st = 0;
-        a[x1][x2] = 1;
+        a[xxx][x2] = 1;
         bfs();
         if (ans == 0)
             printf("IMPOSSIBLE\n");
