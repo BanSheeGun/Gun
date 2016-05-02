@@ -1,21 +1,22 @@
 #include<cstdio>
 #include<algorithm>
-#include<cstring> 
+#include<cstring>
 using namespace std;
 
-int n, i, j, m ,ans, top, t, k;
+int n, i, j, m ,ansx, ansy, ans,top, t, k, ma;
 int a[510];
-int f[250010];
-int p[250010];
-int l[250010];
-int s[250010];
+int b[510];
+int f[505][505];
+int x[505][505];
+int y[505][505];
+int fl[505][505];
 
-int dfs(int k) {
-    if (l[k] != 0) {
-        dfs(l[k]);
-        printf(" %d",a[p[k]]);
+int dfs(int xx, int yy) {
+    if (x[xx][yy] != 0) {
+        dfs(x[xx][yy], y[xx][yy]);
+        printf(" %d",a[xx]);
     } else {
-        printf("%d",a[p[k]]);
+        printf("%d",a[xx]);
     }
     return 0;
 }
@@ -27,32 +28,57 @@ int main() {
         for (i = 1;i <= n; ++i) {
             scanf("%d",&a[i]);
         }
-        top = 0;
         scanf("%d", &m);
-        for (j = 1; j <= m; ++j) {
-            scanf("%d", &k);
-            for (i = n;i >= 1; --i)
-                if (k == a[i]) {
-                    ++top;
-                    p[top] = i;
-                }
+        for (i = 1;i <= m; ++i) {
+            scanf("%d",&b[i]);
         }
         memset(f, 0, sizeof(f));
-        memset(l, 0, sizeof(l));
-        for (i = 1; i <= top; ++i) {
-            f[i] = 1;
-            for (j = 1; j < i; ++j)
-                if (a[p[j]] < a[p[i]] && p[j] < p[i] && f[j]+1 > f[i]) {
-                    f[i] = f[j] + 1;
-                    l[i] = j;
+        memset(x, 0, sizeof(x));
+        memset(y, 0, sizeof(y));
+        memset(fl, 0, sizeof(fl));
+
+        for (i = 1; i <= n; ++i) {
+            ma = 0;
+            for (j = 1; j <= m; ++j)
+                f[i][j] = f[i-1][j];
+                x[i][j] = i-1;
+                y[i][j] = j;
+                if (a[i] == b[j]) {
+                    fl[i][j] = 1;
+                    if (f[i][j] < f[i-1][ma] + 1) {
+                        f[i][j] = f[i-1][ma] + 1;
+                        x[i][j] = i-1;
+                        y[i][j] = ma;
+                    }
                 }
+                if (a[i] > b[j] && f[i-1][j] < ma) {
+                    ma = i-1; 
+                }
+                ma = max(ma, f[i-1][j]);
+            }
+
+
+        ans = 0;
+        for (i = 1; i <= n; ++i)
+            for (j = 1; j <= m; ++j)
+                if (f[i][j] >= ans && fl[i][j] == 1) {
+                    ans = f[i][j];
+                    ansx = i;
+                    ansy = j;
+                }
+
+
+        for (i = 1; i <= n; ++i) {
+            for (j = 1; j <= m; ++j)
+                printf("%d ",f[i][j]);
+            printf("\n");
         }
-        for (i = 1, ans = 1; i <= top; ++i) 
-            if (f[i] > f[ans])
-                ans = i;
-        printf("%d\n", f[ans]);
-        dfs(ans);
-        putchar('\n');
+
+        printf("%d\n",ans);
+        if (ans !=0) {
+            dfs(ansx, ansy);
+            putchar('\n');
+        }
         if (t != 0) putchar('\n');
     }
     return 0;
