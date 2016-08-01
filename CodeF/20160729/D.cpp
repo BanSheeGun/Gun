@@ -6,7 +6,7 @@
 using namespace std;
 
 long long d, k, a, b, t, n;
-long long a1, a2, a3;
+long long a1, a2, a3, a4;
 
 int main() {
     scanf("%I64d%I64d%I64d%I64d%I64d", &d, &k, &a, &b, &t);
@@ -18,9 +18,13 @@ int main() {
 
     n = d / k;
     a2 = d * a + n * t;
-    a3 = n * k * a + (d - n * k) * b + (n - 1) * t;
+    a3 = d * b;
     a1 = min(a1, a2);
     a1 = min(a1, a3);
+    if (n > 0) {
+        a3 = n * k * a + (d - n * k) * b + (n - 1) * t;
+        a1 = min(a1, a3);
+    }
     printf("%I64d\n", a1);
     return 0;
 }
