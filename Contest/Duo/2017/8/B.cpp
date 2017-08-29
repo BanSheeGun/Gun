@@ -31,7 +31,7 @@ int main() {
             if (i * prime[j] > N)
                 break;
             p[i * prime[j]] = 1;
-            if (i % prime[j] == 0) {                        
+            if (i % prime[j] == 0) {  
                 div_num[i*prime[j]]=div_num[i]/(e[i]+1)*(e[i]+2);  
                 e[i*prime[j]]=e[i]+1;  
                 break;
